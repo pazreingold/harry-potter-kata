@@ -54,4 +54,14 @@ public class HarryBookStoreTest {
 
         assertEquals(0.75 * 8 * 5, harryBookStore.buy(books));
     }
+
+    @Test
+    void buyTwoCopiesFromOneBookAndOneCopyFromDifferentBook() {
+        Map<Integer, Integer> books = Map.of(
+                1, 2,
+                2, 1);
+
+        assertEquals(0.95 * 8 * 2 + 8, harryBookStore.buy(books));
+
+    }
 }
